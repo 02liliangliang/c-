@@ -1,9 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    float f,c;
-    f=64.0;
-    c=(5.0/9)*(f-32);
-    printf("f=%fc=%f\n",f,c);
+    char ch='a';
+    printf("%5c",ch);
     return 0;
 }
