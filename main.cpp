@@ -1,17 +1,9 @@
 #include<stdio.h>
 int main()
 {
-    int max(int x,int y);
-    int a,b,c;
-    scanf("%d,%d",&a,&b);
-    c=max(a,b);
-    printf("max=%d\n",c);
-    return 0;
-}
-int max(int x,int y)
-{
-    int z;
-    if(x>y)z=x;
-    else z=y;
+    float f,c;
+    f=64.0;
+    c=(5.0/9)*(f-32);
+    printf("f=%fc=%f\n",f,c);
     return 0;
 }
