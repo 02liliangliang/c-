@@ -1,7 +1,6 @@
 #include<stdio.h>
 int main()
-{ float a;
-  a=10000/3.0;
-  printf("%-25.15f,%25.15\n",a,a);
-  return 0;
-}
+{
+    printf("%e",123.456);
+    return 0;
+}        //格式声明%e指定以指数的形式输出实数
