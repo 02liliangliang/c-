@@ -1,7 +1,13 @@
 #include<stdio.h>
+#include<math.h>
 int main()
-{
-    char ch='a';
-    printf("%5c",ch);
-    return 0;
+{double a,b,c,disc,x1,x2,p,q;
+ scanf("%lf%lf%lf",&a,&b,&c);
+ disc=b*b-4*a*c;
+ p=-b/(2.0*a);
+ q=sqrt(disc)/(2.0*a);
+ x1=p+q,x2=p-q;
+ printf("x1=%7.2f\nx2=%7.2f\n",x1,x2);
+ return 0;
+
 }
