@@ -1,6 +1,6 @@
 #include<stdio.h>
 int main()
-{
-    printf("%s","CHINA");
-    return 0;
+    {double a=1.0;
+     printf("%f\n",a/3);
+     return 0;
 }
