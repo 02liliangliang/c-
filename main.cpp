@@ -2,23 +2,20 @@
 
 int main()
 {
-    char c1 = 'C', c2 = 'h', c3 = 'i', c4 = 'n', c5 = 'a';
-    c1 = c1 + 4;
-    c2 = c2 + 4;
-    c3 = c3 + 4;
-    c4 = c4 + 4;
-    c5 = c5 + 4;
-
-
-    printf("使用putchar输出: ");
-    putchar(c1);
-    putchar(c2);
-    putchar(c3);
-    putchar(c4);
-    putchar(c5);
-    printf("\n");
-
-
-    printf("使用putchar输出: %c%c%c%c%c\n", c1, c2, c3, c4, c5);
+    float h, r, l, s, sq, vq, vz;
+    float pi = 3.141526;
+    printf("请输入圆半径r，圆柱高h∶");
+    scanf("%f %f", &r, &h);
+    l = 2 * pi*r;
+    s = r*r*pi;
+    sq = 4 * pi*r*r;
+    vq = 3.0 / 4.0*pi*r*r*r;
+    vz = pi*r*r*h;
+    printf("圆周长为:       l=%6.2f\n", l);
+    printf("圆面积为:       s=%6.2f\n", s);
+    printf("圆球表面积为:   sq=%6.2f\n", sq);
+    printf("圆球体积为:     v=%6.2f\n", vq);
+    printf("圆柱体积为:     vz=%6.2f\n", vz);
     return 0;
 }
+
