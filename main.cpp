@@ -1,10 +1,10 @@
 #include<stdio.h>
-#include <math.h>
-
 int main()
 {
-    float d = 300000, p = 6000, r = 0.01, m;
-    m = log10(p / (p - d*r)) / log10(1 + r);
-    printf("m = %3.1f\n", m);
+    char c1, c2;
+    c1 = 97;
+    c2 = 98;
+    printf("c1=%c, c2=%c\n", c1, c2);
+    printf("c1=%d, c2=%d\n", c1, c2);
     return 0;
 }
