@@ -1,25 +1,30 @@
 #include <stdio.h>
+
 int main()
 {
-    int  p, r, n, m, temp;
-    printf("请输入两个正整数n,m:");
-    scanf("%d%d,", &n, &m);
-    //调整n保存较大的值
-    if (n < m)
+    char c;
+    int eng_char = 0, space_char = 0, digit_char = 0, other_char = 0;
+    printf("请输入一行字符：");
+    while ((c = getchar()) != '\n')
     {
-        temp = n;
-        n = m;
-        m = temp;
+        if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z')
+        {
+            eng_char++;
+        }
+        else if (c == ' ')
+        {
+            space_char++;
+        }
+        else if (c >= '0' && c <= '9')
+        {
+            digit_char++;
+        }
+        else
+        {
+            other_char++;
+        }
     }
 
-    p = n * m;
-    while (m != 0)
-    {
-        r = n % m;
-        n = m;
-        m = r;
-    }
-    printf("它们的最大公约数为:%d\n", n);
-    printf("它们的最小公倍数为:%d\n", p / n);
+    printf("英文字母数量:%d\n空格数量:%d\n数字数量:%d\n其他字符数量:%d\n", eng_char, space_char, digit_char, other_char);
     return 0;
 }
