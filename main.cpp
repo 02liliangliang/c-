@@ -1,17 +1,17 @@
-#include <stdio.h>
-#include <math.h>
+#include<stdio.h>
 
 int main()
 {
-    int n;
-    double a, prev_sum = 0.0, total_sum = 0.0;
-    printf("请输入a的值以及n的值: ");
-    scanf("%lf %d", &a, &n);
-    for (int i = 0; i < n; i++)
-    {
-        prev_sum += a * pow(10, i);
-        total_sum += prev_sum;
-    }
-    printf("总和为：%lf\n", total_sum);
-    return 0;
+        double total_sum = 0;
+        for(int i = 1; i <= 20; i++)
+        {
+                double single_sum = 1;
+                for (int j = i; j > 0; j--)
+                {
+                        single_sum *= j;
+                }
+                total_sum += single_sum;
+        }
+        printf("1~20每个数字阶乘总和为：%lf\n",total_sum);
+        return 0;
 }
