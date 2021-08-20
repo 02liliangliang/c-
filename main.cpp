@@ -1,31 +1,32 @@
 #include<stdio.h>
- int main()
+int main()
 {
-    long i;
-    float bonus,bon1,bon2,bon4,bon6,bon10;
-    int c;
-    bon1=10000*0.1;
-    bon2=bon1+100000*0.075;
-    bon4=bon2+200000*0.05;
-    bon6=bon4+200000*0.03;
-    bon10=bon6+400000*0.015;
-    printf("请输入利润i:");
-    scanf("%ld",&i);
-    c=i/100000;
-    if(c>10) c=10;
-    switch(c)
-    {
-    case 0:bonus=1*0.1;break;
-    case 1:bonus=bon1+(i-100000)*0.075;break;
-    case 2:
-    case 3:bonus=bon2+(i-200000)*0.05;break;
-    case 4:
-    case 5:bonus=bon4+(i-400000)*0.03;break;
-    case 6:
-    case 7:
-    case 8:
-    case 9:bonus=bon6+(i-600000)*0.015;break;
-    case 10:bonus=bon10+(i-1000000)*0.01;break;
-    }
-    printf("奖金是%10.2f",bonus);
+  int a,b,c,d,t;
+  printf("请输入四个整数：\n");
+  scanf("%d%d%d%d",&a,&b,&c,&d);
+  if(a>b)
+  {
+  t=a;a=b;b=t;
+  }
+  if(a>c)
+  {
+      t=a;a=c;c=t;
+  }
+  if(a>d)
+  {
+      t=a;a=d;d=t;
+  }
+  if(b>c)
+  {
+      t=b;b=c;c=t;
+  }
+  if(b>d)
+  {
+      t=b;b=d;d=t;
+  }
+  if(c>d)
+  {
+      t=c;c=d;d=t;
+  }
+  printf("%d%d%d%d",a,b,c,d);
 }
