@@ -7,7 +7,7 @@ int main()
     double pi = 0.0, term = 1.0;
     int n = 0;
 
-    while (fabs(term) >= 1e-6)
+    while (fabs(term) >= 1e-8)
     {
         n++;
         term = 1.0 / (2 * n - 1)*sign;
