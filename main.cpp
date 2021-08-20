@@ -1,32 +1,14 @@
-#include<stdio.h>
+#include <stdio.h>
+#include<math.h>
 int main()
-{
-  int a,b,c,d,t;
-  printf("请输入四个整数：\n");
-  scanf("%d%d%d%d",&a,&b,&c,&d);
-  if(a>b)
-  {
-  t=a;a=b;b=t;
-  }
-  if(a>c)
-  {
-      t=a;a=c;c=t;
-  }
-  if(a>d)
-  {
-      t=a;a=d;d=t;
-  }
-  if(b>c)
-  {
-      t=b;b=c;c=t;
-  }
-  if(b>d)
-  {
-      t=b;b=d;d=t;
-  }
-  if(c>d)
-  {
-      t=c;c=d;d=t;
-  }
-  printf("%d%d%d%d",a,b,c,d);
+{ int h=10;
+float x1=2,y1=2,x2=-2,y2=2,x3=-2,y3=-2,x4=-2,y4=-2,x,y,d1,d2,d3,d4;
+printf("请输入一个点(x,y)：");
+scanf("%f,%f",&x,&y);
+d1=sqrt((x-x1)*(x-x1)+(y-y1)*(y-y1));
+d2=sqrt((x-x2)*(x-x2)+(y+y2)*(y+y2));
+d3=sqrt((x+x3)*(x+x3)+(y-y3)*(y-y3));
+d4=sqrt((x+x4)*(x-x4)*(y+y4)*(y+y4));
+if(d1>1&&d2>1&&d3>1&&d4>1) h=0;
+printf("该点高度为%d\n",h);
 }
