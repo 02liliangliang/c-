@@ -1,17 +1,19 @@
 #include <stdio.h>
-#include <math.h>
 int main()
 {
-    float a, b;
-    scanf("%f", &a);
-    if (a >= 1000 || a < 0) {
-        printf("请输入小于1000的正数\n");
-        scanf("%f", &a);
-        b = sqrt(a);
+    int x, y;
+    scanf("%d",&x);
+    if (x < 1) {
+        y = x;
+    }
+    else if (x >= 1 && x < 10) {
+        y = 2 * x - 1;
     }
     else {
-        b = sqrt(a);
+        y = 3 * x - 11;
     }
-    printf("a=%4.0f, b=%4.0f\n", a, b);
+    printf("y = %d\n", y);
+
     return 0;
 }
+
