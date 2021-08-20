@@ -1,30 +1,17 @@
 #include <stdio.h>
+#include <math.h>
 
 int main()
 {
-    char c;
-    int eng_char = 0, space_char = 0, digit_char = 0, other_char = 0;
-    printf("请输入一行字符：");
-    while ((c = getchar()) != '\n')
+    int n;
+    double a, prev_sum = 0.0, total_sum = 0.0;
+    printf("请输入a的值以及n的值: ");
+    scanf("%lf %d", &a, &n);
+    for (int i = 0; i < n; i++)
     {
-        if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z')
-        {
-            eng_char++;
-        }
-        else if (c == ' ')
-        {
-            space_char++;
-        }
-        else if (c >= '0' && c <= '9')
-        {
-            digit_char++;
-        }
-        else
-        {
-            other_char++;
-        }
+        prev_sum += a * pow(10, i);
+        total_sum += prev_sum;
     }
-
-    printf("英文字母数量:%d\n空格数量:%d\n数字数量:%d\n其他字符数量:%d\n", eng_char, space_char, digit_char, other_char);
+    printf("总和为：%lf\n", total_sum);
     return 0;
 }
