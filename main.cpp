@@ -1,31 +1,31 @@
 #include<stdio.h>
-int main()
+ int main()
 {
-    long num;
-    printf("输入一个不多于5位的整数:\n");
-    scanf("%ld",&num);
-    int place;
-    if(num>9999) place=5;
-    else if(num>999) place=4;
-    else if(num>99) place=3;
-    else if(num>9) place=2;
-    else place=1;
-    printf("\n%d是%d位数\n",num,place);
-
-    int wan,qian,bai,shi,ge;
-    ge=num%10;
-    shi=num/10%10;
-    bai=num/100%10;
-    qian=num/1000%10;
-    wan=num/10000;
-    printf("\n分别打印出每一位数字和逆序输出:\n");
-    switch(place)
+    long i;
+    float bonus,bon1,bon2,bon4,bon6,bon10;
+    int c;
+    bon1=10000*0.1;
+    bon2=bon1+100000*0.075;
+    bon4=bon2+200000*0.05;
+    bon6=bon4+200000*0.03;
+    bon10=bon6+400000*0.015;
+    printf("请输入利润i:");
+    scanf("%ld",&i);
+    c=i/100000;
+    if(c>10) c=10;
+    switch(c)
     {
-        case 5:printf("%d\t%d%d%d%d%d\n",num,ge,shi,bai,qian,wan);break;
-        case 4:printf("%d\t%d%d%d%d\n",num,ge,shi,bai,qian);break;
-        case 3:printf("%d\t%d%d%d\n",num,ge,shi,bai);break;
-        case 2:printf("%d\t%d%d\n",num,ge,shi);break;
-        case 1:printf("%d\t%d\n",num,ge);break;
+    case 0:bonus=1*0.1;break;
+    case 1:bonus=bon1+(i-100000)*0.075;break;
+    case 2:
+    case 3:bonus=bon2+(i-200000)*0.05;break;
+    case 4:
+    case 5:bonus=bon4+(i-400000)*0.03;break;
+    case 6:
+    case 7:
+    case 8:
+    case 9:bonus=bon6+(i-600000)*0.015;break;
+    case 10:bonus=bon10+(i-1000000)*0.01;break;
     }
+    printf("奖金是%10.2f",bonus);
 }
-
