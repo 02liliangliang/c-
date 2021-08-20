@@ -1,22 +1,25 @@
-# include <stdio.h>
-# include <math.h>
-
+#include <stdio.h>
 int main()
 {
-    int sign = 1;
-    double pi = 0.0, term = 1.0;
-    int n = 0;
-
-    while (fabs(term) >= 1e-8)
+    int  p, r, n, m, temp;
+    printf("请输入两个正整数n,m:");
+    scanf("%d%d,", &n, &m);
+    //调整n保存较大的值
+    if (n < m)
     {
-        n++;
-        term = 1.0 / (2 * n - 1)*sign;
-        pi += term;
-        sign = -sign;
+        temp = n;
+        n = m;
+        m = temp;
     }
-    pi *= 4;
-    printf("pi的近似值是%lf\n", pi);
-    printf("循环体循环了%d次\n", n);
+
+    p = n * m;
+    while (m != 0)
+    {
+        r = n % m;
+        n = m;
+        m = r;
+    }
+    printf("它们的最大公约数为:%d\n", n);
+    printf("它们的最小公倍数为:%d\n", p / n);
     return 0;
 }
-
