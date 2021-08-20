@@ -1,8 +1,22 @@
 #include <stdio.h>
 int main()
 {
-    int a = 3, b = 4, c = 5;
-    printf("%d\n", !(a + b) + c - 1);
-    printf("%d\n", !(a + b) + c - 1 && b + c / 2);
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+    if (a == b && a == c) {
+        printf("Three numbers are equal\n");
+    }else if (a == b && a > c) {
+        printf("a and b are the largest number\n", a);
+    }else if (a == c && a > b) {
+        printf("a and c are the largest number\n", a);
+    }else if (b == c && b > a) {
+        printf("c and b are the largest number\n", a);
+    }else if (a > b && a > c) {
+        printf("a=%d is the largest number\n", a);
+    }else if (b > a && b > c) {
+        printf("b=%d is the largest number\n", b);
+    }else {
+        printf("c=%d is the largest number\n", c);
+    }
     return 0;
 }
