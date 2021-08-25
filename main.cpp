@@ -1,35 +1,35 @@
-#include<stdio.h>
+#include <stdio.h>
 int main()
 {
-        int array[15] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14};
-        int left = 0;
-        int right = sizeof(array) / sizeof(array[0]);
-        int key = 0;
+    int upp = 0, low = 0, digit = 0, space = 0, other = 0;
+    char text[3][80];
 
-        printf("请输入要查找的数字: ");
-        scanf("%d", &key);
+    for (int i=0; i<3; i++)
+    {
+        printf("please input line %d:\n",i+1);
+        gets(text[i]);
 
-        // 二分查找
-        while (left < right)
+        for (int j=0; j<80 && text[i][j]!='\0'; j++)
         {
-                // 找到中间位置
-                int mid = left + ((right - left) >> 1);
-                if (key == array[mid])
-                {
-                        printf("%d\n", mid);
-                        break;
-                }
-                else if (key < array[mid])
-                {
-                        right = mid;
-                }
-                else
-                {
-                        left = mid + 1;
-                }
+            if (text[i][j]>='A'&& text[i][j]<='Z')
+                upp++;
+            else if (text[i][j]>='a' && text[i][j]<='z')
+                low++;
+            else if (text[i][j]>='0' && text[i][j]<='9')
+                digit++;
+            else if (text[i][j]==' ')
+                space++;
+            else
+                other++;
         }
+     }
 
-        if (left >= right)
-                printf("无此数\n");
-        return 0;
+     printf("\nupper case: %d\n", upp);
+     printf("lower case: %d\n", low);
+     printf("digit     : %d\n", digit);
+     printf("space     : %d\n", space);
+     printf("other     : %d\n", other);
+
+    return 0;
 }
+
