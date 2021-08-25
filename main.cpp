@@ -1,47 +1,35 @@
 #include<stdio.h>
-#define M 3
-#define N 4
-
 int main()
 {
-        int max, min, rowindex, colindex, flag = 0;
-        int array[M][N];
-        printf("请输入%d行%d列的数组:\n", M, N);
-        for (int i = 0; i < M; i++)
-        {
-                for (int j = 0; j < N; j++)
-                        scanf("%d", &array[i][j]);
-        }
+        int array[15] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14};
+        int left = 0;
+        int right = sizeof(array) / sizeof(array[0]);
+        int key = 0;
 
-        for (int i = 0; i < M; ++i)
+        printf("请输入要查找的数字: ");
+        scanf("%d", &key);
+
+        // 二分查找
+        while (left < right)
         {
-                max = array[i][0];
-                for (int j = 0; j < N; ++j)
+                // 找到中间位置
+                int mid = left + ((right - left) >> 1);
+                if (key == array[mid])
                 {
-                        if (array[i][j] > max)
-                        {
-                                max = array[i][j];
-                                colindex = j;
-                        }
-                }
-                min = array[0][colindex];
-                for (int j = 0; j < M; ++j)
-                {
-                        if (array[j][colindex] < min)
-                        {
-                                min = array[j][colindex];
-                                rowindex = j;
-                        }
-                }
-                if (max == min && i == rowindex)
-                {
-                        flag = 1;
-                        printf("鞍点为：%d行%d列的元素%d", rowindex, colindex, max);
+                        printf("%d\n", mid);
                         break;
                 }
+                else if (key < array[mid])
+                {
+                        right = mid;
+                }
+                else
+                {
+                        left = mid + 1;
+                }
         }
 
-        if (0 == flag)
-                printf("没有鞍点");
+        if (left >= right)
+                printf("无此数\n");
         return 0;
 }
